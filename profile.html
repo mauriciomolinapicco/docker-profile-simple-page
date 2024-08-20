@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <h1>User Profile</h1>
+  <p><strong>Name:</strong> <span id="profile-name">John Doe</span></p>
+  <p><strong>Email:</strong> <span id="profile-email">john.doe@example.com</span></p>
+  <a href="edit-profile">Edit Profile</a>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', (event) => {
+      // Load user data from local storage
+      const name = localStorage.getItem('userName') || 'John Doe';
+      const email = localStorage.getItem('userEmail') || 'john.doe@example.com';
+      
+      // Update the profile with the loaded data
+      document.getElementById('profile-name').textContent = name;
+      document.getElementById('profile-email').textContent = email;
+    });
+  </script>
+</body>
+</html>
